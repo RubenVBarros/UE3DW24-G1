@@ -1,0 +1,32 @@
+<div class="content">
+  <mat-form-field class="example-full-width">
+    <mat-label>Titre de la recette :</mat-label>
+    <input matInput value="">
+  </mat-form-field>
+
+  <mat-slider thumbLabel [displayWith]="formatLabel" min='0' max='60' step='5' tickInterval='5'></mat-slider>
+
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1" (click)='toogleUrl()'>Recette via lien</mat-radio-button>
+    <mat-radio-button value="2" (click)='toogleInstru()'>Recette via instructions</mat-radio-button>
+  </mat-radio-group>    
+
+  <mat-form-field class="example-full-width" *ngIf='displayUrl'>
+    <mat-label>Recette via lien :</mat-label>
+    <input matInput value="">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" *ngIf='displayInstru'>
+    <mat-label>Recette via instructions :</mat-label>
+    <input matInput value="">
+    <i class="material-icons">add</i>
+    <i class="material-icons">remove</i>
+  </mat-form-field>
+
+  <div class="example-button-row">
+    <button mat-raised-button color="warn">Annuler</button>
+    <button mat-raised-button color="primary">Valider</button>
+  </div>
+
+
+</div>
