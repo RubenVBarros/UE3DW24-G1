@@ -21,6 +21,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ModifierRecetteConfirmComponent } from './modifier-recette-confirm/modifier-recette-confirm.component';
+import { SupprimerRecetteConfirmComponent } from './supprimer-recette-confirm/supprimer-recette-confirm.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 
@@ -33,7 +39,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     InscriptionComponent,
     ModifierRecetteComponent,
     SupprimerRecetteComponent,
-    ChoixCompteComponent
+    ChoixCompteComponent,
+    ModifierRecetteConfirmComponent,
+    SupprimerRecetteConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatMenuModule,
     MatIconModule,
     LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
     
   ],
   providers: [],

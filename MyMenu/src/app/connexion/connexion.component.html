@@ -1,15 +1,29 @@
-<div class="content">
-  <label>Revenez dans la famille !</label>
-  <div class="example-button-row">
-    <mat-form-field class="example-full-width">
-      <mat-label>Adresse email :</mat-label>
-      <input matInput value="">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Mot de passe :</mat-label>
-      <input matInput value="">
-    </mat-form-field>
-    <button mat-raised-button color="warn" [routerLink]="['/choix-compte']">Annuler</button>
-    <button mat-raised-button color="primary">Valider</button>
+<div class="container">
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <label>Revenez dans la famille !</label>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-form-field class="example-full-width">
+        <mat-label>Adresse email :</mat-label>
+        <input matInput value="">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-form-field class="example-full-width">
+        <mat-label>Mot de passe :</mat-label>
+        <input matInput value="">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <button mat-raised-button color="primary">Valider</button>
+      <button mat-raised-button color="warn" [routerLink]="['/choix-compte']">Annuler</button>
+    </div>
   </div>
 </div>

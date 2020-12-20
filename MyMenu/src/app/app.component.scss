@@ -1,0 +1,81 @@
+//Définition des variables SCSS
+$blueColor:#1976d2;
+$whiteColor:white;
+$zeroValue:0;
+$flexdisplay:flex;
+
+/* Responsive Styles et format tablette et plus grands écrans*/
+@media screen and (max-width: 767px) {
+}
+
+/*Format téléphones*/
+@media screen and (max-width: 575px) {
+}
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spacer {
+  flex: 1;
+}
+.toolbar {
+    position: absolute;
+    top: $zeroValue;
+    left: $zeroValue;
+    right: $zeroValue;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color:$blueColor;
+    color: white;
+    font-weight: 600;
+  }
+  .centersearch{
+      text-align: center;
+  }
+  .content {
+    margin-top: 150px;
+    max-width: 960px;
+    align-items: center;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: $blueColor;
+    text-decoration: none;
+  }
+  #fav{
+      color:$whiteColor;
+      margin-left: 20px;
+  }
+  #fav:hover{
+    opacity: 0.8;
+  }
+  #create{
+      margin-left: 20px;
+      color: $whiteColor;
+  }
+  #create:hover{
+    opacity: 0.8;
+  }
+  #inscri{
+    color:$whiteColor;
+    margin-right: 10px;
+  }
+  #inscri:hover{
+    opacity: 0.8;
+  }
+  #home{
+    color:$whiteColor;
+    margin-left: 20px;
+  }
+  #home:hover{
+    opacity: 0.8;
+  }

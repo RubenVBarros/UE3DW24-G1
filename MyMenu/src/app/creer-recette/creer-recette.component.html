@@ -19,14 +19,14 @@
   <mat-form-field class="example-full-width" *ngIf='displayInstru'>
     <mat-label>Recette via instructions :</mat-label>
     <input matInput value="">
-    <i class="material-icons">add</i>
-    <i class="material-icons">remove</i>
+    <mat-icon id="add"></mat-icon>
+    <mat-icon id="minus"></mat-icon>
   </mat-form-field>
 
   <div class="example-button-row">
-    <button mat-raised-button color="warn">Annuler</button>
+    <button mat-raised-button color="warn" [routerLink]="['/']">Annuler</button>
     <button mat-raised-button color="primary">Valider</button>
   </div>
-
+  <!--Ajouter un toast pour la modif,suppr,crea des recettes-->
 
 </div>

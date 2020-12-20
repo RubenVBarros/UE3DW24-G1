@@ -8,6 +8,8 @@ import {ConnexionComponent} from './connexion/connexion.component';
 import {InscriptionComponent} from './inscription/inscription.component';
 import {SupprimerRecetteComponent} from './supprimer-recette/supprimer-recette.component';
 import {ModifierRecetteComponent} from './modifier-recette/modifier-recette.component';
+import {ModifierRecetteConfirmComponent} from './modifier-recette-confirm/modifier-recette-confirm.component';
+import {SupprimerRecetteConfirmComponent} from './supprimer-recette-confirm/supprimer-recette-confirm.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
     {path: 'connexion', component:ConnexionComponent},  
     {path: 'inscription', component:InscriptionComponent},
     {path: 'supprimer-recette', component:SupprimerRecetteComponent},
-    {path: 'modifier-recette', component:ModifierRecetteComponent},  
+    {path: 'modifier-recette', component:ModifierRecetteComponent},
+    {path: 'modifier-recette-confirm', component:ModifierRecetteConfirmComponent},  
+    {path: 'supprimer-recette-confirm', component:SupprimerRecetteConfirmComponent},
 ];
 
 @NgModule({
