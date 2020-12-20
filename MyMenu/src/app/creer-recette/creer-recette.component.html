@@ -1,32 +1,55 @@
-<div class="content">
-  <mat-form-field class="example-full-width">
-    <mat-label>Titre de la recette :</mat-label>
-    <input matInput value="">
-  </mat-form-field>
-
-  <mat-slider thumbLabel [displayWith]="formatLabel" min='0' max='60' step='5' tickInterval='5'></mat-slider>
-
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="1" (click)='toogleUrl()'>Recette via lien</mat-radio-button>
-    <mat-radio-button value="2" (click)='toogleInstru()'>Recette via instructions</mat-radio-button>
-  </mat-radio-group>    
-
-  <mat-form-field class="example-full-width" *ngIf='displayUrl'>
-    <mat-label>Recette via lien :</mat-label>
-    <input matInput value="">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width" *ngIf='displayInstru'>
-    <mat-label>Recette via instructions :</mat-label>
-    <input matInput value="">
-    <mat-icon id="add"></mat-icon>
-    <mat-icon id="minus"></mat-icon>
-  </mat-form-field>
-
-  <div class="example-button-row">
-    <button mat-raised-button color="warn" [routerLink]="['/']">Annuler</button>
-    <button mat-raised-button color="primary">Valider</button>
+<div class="container">
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titre de la recette :</mat-label>
+        <input matInput value="">
+      </mat-form-field>
+    </div>
   </div>
-  <!--Ajouter un toast pour la modif,suppr,crea des recettes-->
-
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-slider thumbLabel [displayWith]="formatLabel" min='0' max='60' step='5' tickInterval='5'></mat-slider>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1" (click)='toogleUrl()'>Recette via lien</mat-radio-button>
+        <mat-radio-button value="2" (click)='toogleInstru()'>Recette via instructions</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-form-field class="example-full-width" *ngIf='displayUrl'>
+        <mat-label>Recette via lien :</mat-label>
+        <input matInput value="">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <mat-form-field class="example-full-width" *ngIf='displayInstru'>
+        <mat-label>Recette via instructions :</mat-label>
+        <input matInput value="">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+        <button mat-icon-button *ngIf='displayInstru'>
+            <mat-icon id="add"></mat-icon>
+        </button>
+        <button mat-icon-button *ngIf='displayInstru'>
+            <mat-icon id="minus"></mat-icon>
+        </button>
+    </div>
+  </div>
+  <div class="row align-items-center" align='center'>
+    <div class="col">
+      <button mat-raised-button color="warn" [routerLink]="['/']">Annuler</button>
+      <button mat-raised-button color="primary" [routerLink]="['/inscription']">Inscription</button>
+    </div>
+  </div>
 </div>

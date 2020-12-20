@@ -1,7 +1,7 @@
 $width100:100%;
 
 .mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
+    margin-left: 10px;
   }
 .example-form {
     min-width: 150px;
@@ -19,4 +19,19 @@ $width100:100%;
 #minus{
     background-size: cover;
     background-image: url("/../assets/minus.svg");
+}
+button{
+    margin: 20px;
+}
+.example-full-width{
+    width: 20%;
+}
+mat-slider{
+    margin-bottom: 20px;
+}
+mat-radio-button{
+    margin-bottom: 15px;
+}
+mat-icon-button{
+    margin-top: 20px;
 }
