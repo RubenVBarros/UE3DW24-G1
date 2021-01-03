@@ -1,0 +1,15 @@
+input{
+    all: unset;
+    background: transparent;
+    border: 2px solid black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+    margin-left: 15px;
+    transition: all 300ms ease;
+}
+input:hover{
+    background-color: black;
+    color: white;
+}

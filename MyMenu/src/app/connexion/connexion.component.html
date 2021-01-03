@@ -1,29 +1,32 @@
 <div class="container">
-  <div class="row align-items-center" align='center'>
-    <div class="col">
-      <label>Revenez dans la famille !</label>
-    </div>
+    <form [formGroup]='inscriForm'>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <mat-form-field>
+            <input matInput placeholder="mettez un email..." formControlName='email'>
+            <mat-error *ngIf="email.invalid && email.touched">
+              Votre adresse email n'a pas l'air réel !
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <mat-form-field>
+            <input matInput placeholder="mettez un mot de passe..." formControlName='mdp'>
+            <mat-hint align="end">Votre mot de passe doit avoir une lettre et un chiffre au moins</mat-hint>
+            <mat-error *ngIf="mdp.invalid && mdp.touched">
+              Votre mot de passe n'est pas assez élaboré !
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <button mat-raised-button color="primary" [disabled]='inscriForm.invalid' [routerLink]="['/']">Valider</button>
+          <button mat-raised-button color="warn" [routerLink]="['/choix-compte']">Retour</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="row align-items-center" align='center'>
-    <div class="col">
-      <mat-form-field class="example-full-width">
-        <mat-label>Adresse email :</mat-label>
-        <input matInput value="">
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row align-items-center" align='center'>
-    <div class="col">
-      <mat-form-field class="example-full-width">
-        <mat-label>Mot de passe :</mat-label>
-        <input matInput value="">
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row align-items-center" align='center'>
-    <div class="col">
-      <button mat-raised-button color="primary">Valider</button>
-      <button mat-raised-button color="warn" [routerLink]="['/choix-compte']">Annuler</button>
-    </div>
-  </div>
-</div>
+  

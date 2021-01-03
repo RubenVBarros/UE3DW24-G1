@@ -1,5 +1,6 @@
 $width100:100%;
 
+
 .mat-radio-button ~ .mat-radio-button {
     margin-left: 10px;
   }
@@ -26,6 +27,9 @@ button{
 .example-full-width{
     width: 20%;
 }
+p{
+    margin-top: 20px;
+}
 mat-slider{
     margin-bottom: 20px;
 }
@@ -34,4 +38,39 @@ mat-radio-button{
 }
 mat-icon-button{
     margin-top: 20px;
+}
+.example-chip-list{
+    width: 30%;
+}
+mat-chip{
+    width: auto;
+    height: auto;
+}
+.alert-success{
+    background-color:#d4ecdc;
+    width: 25%;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+hr{
+    border-color:#d4ecdc;
+    width: 50%;
+}
+mat-divider{
+    width: 70%;
+}
+.plus{
+    background-image: url("/../assets/add.svg");
+    background-size: $width100;
+}
+.minus{
+    background-size: $width100;
+    background-image: url("/../assets/minus.svg");
 }

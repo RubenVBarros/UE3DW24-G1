@@ -10,10 +10,11 @@ import {SupprimerRecetteComponent} from './supprimer-recette/supprimer-recette.c
 import {ModifierRecetteComponent} from './modifier-recette/modifier-recette.component';
 import {ModifierRecetteConfirmComponent} from './modifier-recette-confirm/modifier-recette-confirm.component';
 import {SupprimerRecetteConfirmComponent} from './supprimer-recette-confirm/supprimer-recette-confirm.component';
-
+import {AccueilComponent} from './accueil/accueil.component';
 
 const routes: Routes = [
-    {path: '',redirectTo:'#',pathMatch:'full'},
+    {path: '',redirectTo:'/accueil',pathMatch:'full'},
+    {path: 'accueil', component:AccueilComponent},
     {path: 'favoris', component:FavorisComponent},
     {path: 'creer-recette', component:CreerRecetteComponent},
     {path: 'choix-compte', component:ChoixCompteComponent},  

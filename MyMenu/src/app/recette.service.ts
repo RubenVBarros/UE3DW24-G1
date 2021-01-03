@@ -63,14 +63,14 @@ export class RecetteService {
 
   //////// Méthodes Valider //////////
   /** POST: on ajoute une nouvelle recette au serveur */
-  addHero(recette: Recette): Observable<Recette> {
+  addRecette(recette: Recette): Observable<Recette> {
     return this.http.post<Recette>(this.recetteUrl, recette, this.httpOptions).pipe(
       tap((newRecette: Recette) => console.log(`recette ajoutée w/ id=${newRecette.id}`)),
       catchError(this.handleError<Recette>('addRecette'))
     );
   }
   /** DELETE: on efface la recette du serveur */
-  deleteHero(recette: Recette | number): Observable<Recette> {
+  deleteRecette(recette: Recette | number): Observable<Recette> {
     const id = typeof recette === 'number' ? recette : recette.id;
     const url = `${this.recetteUrl}/${id}`;
 

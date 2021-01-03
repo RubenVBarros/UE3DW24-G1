@@ -40,8 +40,8 @@ $flexdisplay:flex;
       text-align: center;
   }
   .content {
-    margin-top: 150px;
-    max-width: 960px;
+    margin-top: 10%;
+    max-width: 100%;
     align-items: center;
   }
 
@@ -78,4 +78,7 @@ $flexdisplay:flex;
   }
   #home:hover{
     opacity: 0.8;
+  }
+  app-searchbar{
+    text-align: center;
   }

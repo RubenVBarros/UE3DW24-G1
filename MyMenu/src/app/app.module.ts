@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ModifierRecetteComponent } from './modifier-recette/modifier-recette.component';
 import { SupprimerRecetteComponent } from './supprimer-recette/supprimer-recette.component';
 import { ChoixCompteComponent } from './choix-compte/choix-compte.component';
+import { ConfirmMessageComponent } from './confirm-message/confirm-message.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
@@ -26,9 +30,8 @@ import { SupprimerRecetteConfirmComponent } from './supprimer-recette-confirm/su
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-
-
-
+import { MatChipsModule } from '@angular/material/chips';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { MatListModule } from '@angular/material/list';
     ChoixCompteComponent,
     ModifierRecetteConfirmComponent,
     SupprimerRecetteConfirmComponent,
+    ConfirmMessageComponent,
+    SearchbarComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,11 +60,13 @@ import { MatListModule } from '@angular/material/list';
     MatGridListModule,
     MatRadioModule,
     MatMenuModule,
+    MatChipsModule,
     MatIconModule,
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    ReactiveFormsModule,
     
   ],
   providers: [],
