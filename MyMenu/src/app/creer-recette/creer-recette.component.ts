@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,Validators, FormBuilder, FormArray } from '@angular/forms';
 
+import { Recette } from '../recette';
+import { RecetteService } from '../recette.service';
+
 @Component({
   selector: 'app-creer-recette',
   templateUrl: './creer-recette.component.html',
@@ -8,6 +11,7 @@ import { FormGroup,Validators, FormBuilder, FormArray } from '@angular/forms';
 })
 
 export class CreerRecetteComponent implements OnInit {
+    recettes: Recette[];
     showAlert = false;
     creerRecetteForm:FormGroup;
 
@@ -52,9 +56,10 @@ export class CreerRecetteComponent implements OnInit {
           this.showAlert = !this.showAlert;
       }
 
-  constructor(private fb:FormBuilder) {}
+  constructor(private fb:FormBuilder,private recetteService: RecetteService) {}
 
   ngOnInit(): void {
+      this.getRecettes();
       this.creerRecetteForm = this.fb.group({
         titre:['', [Validators.required,Validators.minLength(3)]],
         temps_prep:[null, [Validators.required]],
@@ -69,6 +74,29 @@ export class CreerRecetteComponent implements OnInit {
       }),
       this.creerRecetteForm.valueChanges.subscribe(console.log);
   }
+
+  //permet de voir les recettes présentes dans la bdd interne
+  getRecettes(): void {
+    this.recetteService.getRecettes()
+    .subscribe(recettes => this.recettes = recettes);
+  }
+
+  //ajout ds la bdd interne
+  add(titre: string,temps_prep: number,portions: number,url: string,ingredients: string[],instructions: string[]): void {
+    titre = titre.trim();
+    url = url.trim();
+    if (!titre) { return; }
+    if (!temps_prep) { return; }
+    if (!portions) { return; }
+    if (!url) { return; }
+    if (!ingredients) { return; }
+    if (!instructions) { return; }
+    this.recetteService.addRecette({ titre, temps_prep, portions, url, ingredients, instructions } as Recette)
+      .subscribe(recette => {
+        this.recettes.push(recette);
+      });
+  }
+
   //Méthode d'ajout et suppression des ingrédients et instructions
   addIngredients(){
       this.listeIngredients.push(this.fb.control(''));

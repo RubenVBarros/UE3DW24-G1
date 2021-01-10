@@ -1,5 +1,12 @@
-<form class="form-inline waves-light" mdbWavesEffect>
-    <div class="md-form mt-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Recherche une recette...">
-    </div>
-</form>
+<div class="row">
+    <div class="col">
+        <input class="form-control mr-sm-2" type="text" placeholder="Recherche une recette..." #searchBox id="search-box" (input)="search(searchBox.value)">
+        <ul class="recette-result">
+            <li *ngFor="let recette of recette$ | async">
+                <a routerLink="/detail/{{recette.id}}">
+                    {{recette.titre}}
+                  </a>
+            </li>
+        </ul>
+    </div>   
+</div>

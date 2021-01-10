@@ -1,2 +1,9 @@
-<p>supprimer-recette works!</p>
-  <!--Ajouter un toast pour la modif,suppr,crea des recettes-->
+<div class="container" *ngIf='showMe'>
+    <div class="row recettes">
+        <div class="alert alert-danger col" role='danger' *ngFor='let recette of recettes'>
+            <b><p>En êtes vous sur ?</p></b>
+            <button mat-raised-button color='warn'>Supprimer</button>
+            <button mat-raised-button color='primary' (click)="closeAlert()">Annuler</button>
+        </div>
+    </div>
+</div>

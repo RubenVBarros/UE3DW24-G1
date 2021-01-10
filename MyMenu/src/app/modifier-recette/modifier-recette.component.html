@@ -1,2 +1,97 @@
-<p>modifier-recette works!</p>
-  <!--Ajouter un toast pour la modif,suppr,crea des recettes-->
+<div class="container">
+    <form [formGroup]='modifierRecetteForm'>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Titre de la recette :</mat-label>
+            <input matInput placeholder='mettez un titre...' formControlName='titre'>
+            <mat-error *ngIf="titre.invalid">
+              Le titre doit faire plus de 3 caractères !
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <p>Temps de préparation :</p>
+          <mat-slider thumbLabel [displayWith]="formatLabel" min='0' max='60' step='5' tickInterval='5'
+            formControlName='temps_prep' #tempsPrep></mat-slider>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <p>Portions :</p>
+          <mat-slider thumbLabel [displayWith]="formatLabelPortions" min='0' max='50' step='1' tickInterval='1'
+            formControlName='portions' #Portions>
+          </mat-slider>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" (click)='toogleUrl()' formControlName='rlien'>Recette via lien</mat-radio-button>
+            <mat-radio-button value="2" (click)='toogleInstru()' formControlName='rinstructions'>Recette via instructions
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <mat-form-field class="example-full-width" *ngIf='displayUrl'>
+            <mat-label>Recette via lien :</mat-label>
+            <input matInput formControlName='url'>
+            <mat-error *ngIf="url.invalid">
+              Le texte donnée n'est pas une url !
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center' *ngIf='displayInstru' formArrayName='listeIngredients'>
+        <div class="col" *ngFor="let ingredients of listeIngredients.controls;let i=index">
+          <mat-form-field>
+            <mat-label>Ingrédients {{i+1}}:</mat-label>
+            <input matInput placeholder="mettez vos ingredients..." [formControlName]="i">
+            <mat-error *ngIf="i.invalid">
+              Il faut mettre un ingrédient !
+            </mat-error>
+          </mat-form-field>
+          <button mat-icon-button (click)="addIngredients()" class="plus">
+            <mat-icon></mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteIngredients(i)" class="minus">
+            <mat-icon></mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center' *ngIf='displayInstru' formArrayName='listeInstructions'>
+        <div class="col" *ngFor="let instructions of listeInstructions.controls;let i=index">
+          <mat-form-field>
+            <mat-label>Instructions {{i+1}}:</mat-label>
+            <input matInput placeholder="mettez vos instructions..." [formControlName]="i">
+            <mat-error *ngIf="listeInstructions.controls[i].required">
+              Il faut mettre une instruction !
+            </mat-error>
+          </mat-form-field>
+          <button mat-icon-button (click)="addInstructions()" class="plus">
+            <mat-icon></mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteInstructions(i)" class="minus">
+            <mat-icon></mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row align-items-center" align='center'>
+        <div class="col">
+          <button mat-raised-button color="warn" (click)="goBack()">Retour</button>
+          <button mat-raised-button color="primary" (click)="save();toogleAlert();"
+            [disabled]="!modifierRecetteForm.valid">Valider</button>
+          <div class="alert alert-success" role="alert" *ngIf='showAlert'>
+            <h4 class="alert-heading">Recette Ajoutée !</h4>
+            <p>Votre recette a été ajouté.</p>
+            <button mat-button (click)="closeAlert()">OK</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

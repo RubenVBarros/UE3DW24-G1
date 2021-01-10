@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-supprimer-recette',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./supprimer-recette.component.scss']
 })
 export class SupprimerRecetteComponent implements OnInit {
+    @Input() showMe:boolean;
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
+    closeAlert(){
+        this.showMe = false;
+    }
 
 }

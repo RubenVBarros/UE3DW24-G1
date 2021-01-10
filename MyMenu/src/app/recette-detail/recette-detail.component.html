@@ -1,0 +1,48 @@
+<div class='container'>
+  <div class="row">
+    <div class="col">
+      <div *ngIf='recette'>
+        <h2>Titre de la recette :</h2>
+        <h4>{{recette.titre}}</h4>
+        <div class="autre">
+          <span>Temps de préparation :</span>
+          <br>
+          <span>{{recette.temps_prep}}</span>
+          <br>
+          <span>Nombre de portions :</span>
+          <br>
+          <span>{{recette.portions}} portions</span>
+          <br>
+          <span>Lien de la recette : </span>
+          <br>
+          <a href={{recette.url}}>{{recette.url}}</a>
+        </div>
+        <br>
+        <div class="ingredients">
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Liste des ingrédients
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <b>
+                <li>{{recette.ingredients}}</li>
+              </b>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Liste des instructions
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <b>
+                <li>{{recette.instructions}}</li>
+              </b>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

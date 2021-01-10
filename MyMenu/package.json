@@ -21,6 +21,8 @@
     "@angular/platform-browser": "~11.0.4",
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
+    "@feathersjs/express": "^4.5.11",
+    "@feathersjs/feathers": "^4.5.11",
     "angular-in-memory-web-api": "^0.11.0",
     "mdbootstrap": "^4.19.2",
     "rxjs": "~6.6.0",

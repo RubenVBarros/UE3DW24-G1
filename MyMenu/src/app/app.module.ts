@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,13 +29,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
-import { ModifierRecetteConfirmComponent } from './modifier-recette-confirm/modifier-recette-confirm.component';
-import { SupprimerRecetteConfirmComponent } from './supprimer-recette-confirm/supprimer-recette-confirm.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
 import { AccueilComponent } from './accueil/accueil.component';
+import { RecetteDetailComponent } from './recette-detail/recette-detail.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -43,11 +48,11 @@ import { AccueilComponent } from './accueil/accueil.component';
     ModifierRecetteComponent,
     SupprimerRecetteComponent,
     ChoixCompteComponent,
-    ModifierRecetteConfirmComponent,
-    SupprimerRecetteConfirmComponent,
+    RecetteDetailComponent,
     ConfirmMessageComponent,
     SearchbarComponent,
     AccueilComponent,
+    RecetteDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,10 +68,15 @@ import { AccueilComponent } from './accueil/accueil.component';
     MatChipsModule,
     MatIconModule,
     LayoutModule,
+    MatExpansionModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false}
+    )
     
   ],
   providers: [],

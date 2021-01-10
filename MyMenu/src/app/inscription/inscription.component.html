@@ -23,9 +23,14 @@
     </div>
     <div class="row align-items-center" align='center'>
       <div class="col">
-        <button mat-raised-button color="primary" [disabled]='inscriForm.invalid' [routerLink]="['/']">Valider</button>
+        <button mat-raised-button color="primary" [disabled]='inscriForm.invalid' (click)="add(email.value,mdp.value);toogleAlert();">Valider</button>
         <!-- redirection vers l'accueil qui doit etre crée en cliquant sur Valider-->
         <button mat-raised-button color="warn" [routerLink]="['/choix-compte']">Retour</button>
+        <div class="alert alert-success" role="alert" *ngIf='showAlert'>
+            <h4 class="alert-heading">Compte Ajoutée !</h4>
+            <p>Votre compte a été ajouté.</p>
+            <button mat-button (click)="closeAlert()" [routerLink]="['/']">OK</button>
+        </div>
       </div>
     </div>
   </form>

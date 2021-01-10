@@ -15,14 +15,14 @@
       <div class="col">
         <p>Temps de préparation :</p>
         <mat-slider thumbLabel [displayWith]="formatLabel" min='0' max='60' step='5' tickInterval='5'
-          formControlName='temps_prep'></mat-slider>
+          formControlName='temps_prep' #tempsPrep></mat-slider>
       </div>
     </div>
     <div class="row align-items-center" align='center'>
       <div class="col">
         <p>Portions :</p>
         <mat-slider thumbLabel [displayWith]="formatLabelPortions" min='0' max='50' step='1' tickInterval='1'
-          formControlName='portions'>
+          formControlName='portions' #Portions>
         </mat-slider>
       </div>
     </div>
@@ -83,7 +83,7 @@
     <div class="row align-items-center" align='center'>
       <div class="col">
         <button mat-raised-button color="warn" [routerLink]="['/']">Retour</button>
-        <button mat-raised-button color="primary" (click)="toogleAlert()"
+        <button mat-raised-button color="primary" (click)="add(titre.value,tempsPrep.value,Portions.value,url.value,listeIngredients.value,listeInstructions.value);toogleAlert();"
           [disabled]="!creerRecetteForm.valid">Valider</button>
         <div class="alert alert-success" role="alert" *ngIf='showAlert'>
           <h4 class="alert-heading">Recette Ajoutée !</h4>
